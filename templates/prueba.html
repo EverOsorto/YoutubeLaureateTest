@@ -26,7 +26,9 @@
         <!-- scripts -->
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script>
+
 //envio Formulario  
+var tok;
 $( "#SearchText" ).submit(function( event ) {
  
   // detencion de formulario
@@ -44,7 +46,7 @@ $( "#SearchText" ).submit(function( event ) {
   // resultados en div
   posting.done(function( data ) {
     var content = $( data ).find( "#content" );
-    $( "#result" ).empty().append( content );
+    $( "#results" ).empty().append( content );
   });
 });
 </script>
