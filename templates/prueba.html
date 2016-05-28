@@ -19,8 +19,10 @@
                     <p><input type="text" id="Search" placeholder="Tipea algo..." autocomplete="off" class="form-control" name="buscar" /></p>
                     <p><input type="submit" value="Buscar"  class="form-control btn btn-primary w100"></p>
                 </form>
-                <div id="results"></div>
-            </div>
+                <div id="results">
+                   <p>By Ever Osorto -28/05/16</p>
+                </div>      
+                </div>
         </div>
         
         <!-- scripts -->
@@ -38,11 +40,10 @@ $( "#SearchText" ).submit(function( event ) {
   var $form = $( this ),
     ser = $form.find( "input[name='buscar']" ).val(),
     url = $form.attr( "action" );
- 
+
   // envio de data por post
   var posting = $.post( '/test/video', { PageToken: tok, SearchText: ser } );
   
- 
   // resultados en div
   posting.done(function( data ) {
     var content = $( data ).find( "#content" );
