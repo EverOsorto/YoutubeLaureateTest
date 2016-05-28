@@ -26,22 +26,22 @@
         <!-- scripts -->
         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script>
-// Attach a submit handler to the form
+//envio Formulario  
 $( "#SearchText" ).submit(function( event ) {
  
-  // Stop form from submitting normally
+  // detencion de formulario
   event.preventDefault();
  
-  // Get some values from elements on the page:
+  // elementos de pagina:
   var $form = $( this ),
-    term = $form.find( "input[name='buscar']" ).val(),
+    ser = $form.find( "input[name='buscar']" ).val(),
     url = $form.attr( "action" );
  
-  // Send the data using post
+  // envio de data por post
   var posting = $.post( '/test/video', { PageToken: tok, SearchText: ser } );
   
  
-  // Put the results in a div
+  // resultados en div
   posting.done(function( data ) {
     var content = $( data ).find( "#content" );
     $( "#result" ).empty().append( content );
